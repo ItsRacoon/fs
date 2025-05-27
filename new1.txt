@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Registration Form</title>
+</head>
+<body>
+
+  <h2>Register</h2>
+  <form id="registrationForm">
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password"><br><br>
+    <input type="email" id="email" placeholder="Email"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message" style="color: red; margin-top: 10px;"></div>
+
+  <script>
+    // This runs when the form is submitted
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop form from refreshing
+
+      // Get values
+      let username = document.getElementById("username").value.trim();
+      let password = document.getElementById("password").value;
+      let confirmPassword = document.getElementById("confirmPassword").value;
+      let email = document.getElementById("email").value.trim();
+
+      let message = "";
+
+      // Simple validations
+      if (username === "") {
+        message = "Username cannot be empty.";
+      } else if (password.length < 6) {
+        message = "Password must be at least 6 characters.";
+      } else if (password !== confirmPassword) {
+        message = "Passwords do not match.";
+      } else if (!email.includes("@") || !email.includes(".")) {
+        message = "Invalid email format.";
+      } else {
+        message = "Registration successful!";
+        document.getElementById("message").style.color = "green";
+      }
+
+      document.getElementById("message").innerText = message;
+    });
+  </script>
+
+</body>
+</html>

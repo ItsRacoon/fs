@@ -1,0 +1,36 @@
+import React from 'react';
+import './styles.css'; // Import external styles
+
+function Greeting() {
+  const currentHour = new Date().getHours();
+  let greeting = '';
+  let headingStyle = {};
+
+  if (currentHour >= 0 && currentHour < 12) {
+    greeting = 'Good Morning';
+    headingStyle.color = 'green';
+  } else if (currentHour >= 12 && currentHour < 18) {
+    greeting = 'Good Afternoon';
+    headingStyle.color = 'blue';
+  } else {
+    greeting = 'Good Evening';
+    headingStyle.color = 'red';
+  }
+
+  return (
+    <div className="container">
+      <h1 className="heading" style={headingStyle}>{greeting}</h1>
+    </div>
+  );
+}
+
+export default Greeting;
+
+import React from 'react';
+import Greeting from './Greeting';
+
+function App() {
+  return <Greeting />;
+}
+
+export default App;

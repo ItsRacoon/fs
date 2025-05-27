@@ -40,6 +40,8 @@ const score = quiz.reduce((s, q, i) => s + (q.correct === answers[i] ? 1 : 0), 0
  
 app.get('/results', (req, res) => res.json(results)); 
 app.listen(PORT, () => console.log(`Server on http://localhost:${PORT}`)); 
+
+--------------------------------------------------------------------------------------
 Frontend/App.js 
 import React, { useState } from 'react'; 
 import './App.css'; 

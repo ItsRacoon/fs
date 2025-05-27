@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            margin: 20px 0;
+        }
+
+        th {
+            color: red; /* All headings in red */
+            font-weight: bold;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        td {
+            color: blue; /* All other cells in blue */
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:hover td {
+            background-color: #f5f5f5; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>Course</th>
+                <th>Subject</th>
+                <th colspan="2">Marks</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Internal</th>
+                <th>External</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>BTech(CSE)</td>
+                <td>Fun with Game Design</td>
+                <td>30</td>
+                <td>70</td>
+                <td>T</td> <!-- Added Category value -->
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Fun with Programming</td>
+                <td>30</td>
+                <td>70</td>
+                <td>P</td> <!-- Added Category value -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
